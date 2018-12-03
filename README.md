@@ -1,65 +1,57 @@
+### #######################################################################################################################
+
+## Predictive performance of multinomial logistic prediction models
+- Author of this file and of the final version of the code: Valentijn M.T. de Jong
+- File last modified: December 2018
+- Code last modified: < April 2018
+
+### #######################################################################################################################
+
+This is code for a simulation study presented in a manuscript accepted for publication in Statistics in Medicine, titled: 
+
+#### Predictive performance of multinomial logistic prediction models
+
+### Authors:
+- Valentijn M. T. de Jong
+- Marinus J. C. Eijkemans
+- Ben van Calster
+- Dirk Timmerman
+- Karel G. M. Moons
+- Ewout W. Steyerberg
+- Maarten van Smeden
+
+### For questions, email: 
+- V.M.T.deJong-2@umcutrecht.nl
+- Valentijn.M.T.de.Jong@gmail.com
+
 # #######################################################################################################################
 
-# Author of code: Valentijn M.T. de Jong.
-# File last modified: December 2018
-# Code last modified: < April 2018
+### How to...
 
-# #######################################################################################################################
-
-# This is code for a simulation study presented in a manuscript accepted for publication in 
-# Statistics in medicine:
-  
-# Title: Predictive performance of multinomial logistic prediction models
-
-# Authors:
-#   Valentijn M. T. de Jong
-#   Marinus J. C. Eijkemans
-#   Ben van Calster
-#   Dirk Timmerman
-#   Karel G. M. Moons
-#   Ewout W. Steyerberg
-#   Maarten van Smeden
-
-# For questions, email: 
-#   V.M.T.deJong-2@umcutrecht.nl
-#   Valentijn.M.T.de.Jong@gmail.com
-
-# #######################################################################################################################
-
-Table of Contents:
-
-1. Important messages.
-2. How to to run the simulation in R
-3. How to run the simulation from command line in linux
-4. How to reproduce the data.
-5. How to load the data.
-6. How to reproduce the plots in the manuscript.
-7. How to reproduce the tables in the manuscript.
-8. Proportion of non-convergence
+1. [Get started](#start)
+2. [Run the simulation in R](#inR)
+3. [Run the simulation from command line](#cmd)
+4. [Reproduce the data](#rep-data)
+5. [Load the data.](#load)
+6. [Reproduce the plots in the manuscript](#plots)
+7. [Rereproduce the tables in the manuscript](#tables)
+8. [Inspect non-convergence](#non-conv)
 
 #########################################################################################################################
-1. Important messages.
+
+
+#### 1. Get started <a name="start"></a>
 
 a) All simulations were carried out in R 3.2.2
 b) The .R files contain elaborate comments on how to use each function. Therefore, this file is only there to direct
 users to the appropriate .R files in the correct order, and which parameters to use.
 c) Note that many of the .R files require other files to be present in the same directory, or in the directory they were put.
 d) The used R packages are:
-	install.packages("glmnet")
-	install.packages("parallel")
-	install.packages("mlogit")
-	install.packages("MASS")
-	install.packages("abind")
-	install.packages("tidyr")
-	install.packages("VGAM")
-	install.packages("DBI")       # These two are not necessary for some versions of R.
-	install.packages("lazyeval")  #
-e) The full data files are very large, and therefore not included in this data archive. Instead, .RDATA files are
-incuded, which include all summary data in the manuscript, and more. The estimated alpha parameters are located in
-.txt files, which are automatically loaded by the scripts.
+	install.packages(c("glmnet", "mlogit", "MASS", "abind", "tidyr", "VGAM", "DBI", "lazyeval")) # The last two are not necessary for some versions of R.
+e) The full data files are very large, and therefore not included in this data archive. Instead, .RDATA files are incuded, which include all summary data in the manuscript, and more. The estimated alpha parameters are located in .txt files, which are automatically loaded by the scripts.
 
 #########################################################################################################################
-2. How to to run the simualation in R
+#### 2. Run the simualation in R <a name="inR"></a>
 
 a) Make sure all of the project's .R files and alph_mean.txt are in the correct directory
 b) Open RunSens.R
@@ -74,13 +66,13 @@ c) Change the variables to whatever you desire:
 d) Run it.
 	
 #########################################################################################################################
-3. How to run the simulation from command line in linux
+#### 3. Run the simulation from command line in linux <a name="cmd"></a>
 
 a) Go through 1, 2a and 2b
 b) Call RunSens.R . Supply values for the parameters id, repetition and max_i, cor_id, bin and effect e.g.:
 	#$ -S /bin/bash
 #$ -cwd
-#$ -M V.M.T.deJong-2@umcutrecht.nl
+#$ -M foo@bar.com
 #$ -m beas
 module load R
 Rscript  	
@@ -90,7 +82,7 @@ Though the exact commands may differ on a different setup.
 c) ALternative for b): Use the sh files in the sh files folder.
 
 #########################################################################################################################
-4. How to reproduce the data.
+#### 4. Reproduce the data. <a name="rep-data"></a>
 
 a) See 1, as well as 2.
 b) Make sure the file alph_mean.txt is in the same directory as the R files, and OptimCor and OptimBin contain
@@ -110,7 +102,7 @@ and every sensitivity analysis repetion 1 till 10. This can be achieved by using
 by running the files in the folder "sh files", after editing them so that they conform to your own setup.
 
 #########################################################################################################################
-5. How to load the data.
+#### 5. Load the data. <a name="load"></a>
 
 a) See 1.
 b) If you want to load the raw data, you'll have to reproduce them first, see 2 and 4. The Aggregate data is provided
@@ -122,21 +114,21 @@ c) Run "LoadData.R". Note that:
 	4 warnings of missing files may appear. Sorry. They are not really missing, but misnamed.
 
 #########################################################################################################################
-6. How to reproduce the plots in the manuscript
+#### 6. Reproduce the plots in the manuscript <a name="plots"></a>
 
 a) See 1, 2 and 4. for generating data.
 b) See 1 and 5 for loading of data.
 c) Run "Plots 2nd sub.R"
 
 #########################################################################################################################
-7. How to reproduce the tables in the manuscript.
+#### 7. Reproduce the tables in the manuscript. <a name="tables"></a>
 
 a) See 1, 2, 4. for generating data.
 b) See 1 and 5 for loading of data.
 c) Run "Manuscript Tables.R"
 	
 #########################################################################################################################
-8. Proportion of non-convergence
+#### 8. Inspect non-convergence <a name="non-conv"></a>
 
 a) See 1, 2, 4. for generating data.
 b) See 1 and 5 for loading of data.
