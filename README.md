@@ -2,14 +2,8 @@
 * Author of this file and of the final version of the code: Valentijn M.T. de Jong
 * File last modified: December 2018
 * Code last modified: < April 2018
-* This is code for a simulation study presented in a manuscript accepted for publication in Statistics in Medicine, titled "Predictive performance of multinomial logistic prediction models", authored by:
-    * Valentijn M. T. de Jong
-    * Marinus J. C. Eijkemans
-    * Ben van Calster
-    * Dirk Timmerman
-    * Karel G. M. Moons
-    * Ewout W. Steyerberg
-    * Maarten van Smeden
+* This is code for a simulation study presented in: de Jong VMT, Eijkemans MJC, van Calster B, et al. Sample size considerations and predictive performance of multinomial logistic prediction models.Statistics in Medicine. 2019;1–19.https://doi.org/10.1002/sim.8063
+
 * For questions, email: 
     * V.M.T.deJong-2@umcutrecht.nl
     * Valentijn.M.T.de.Jong@gmail.com
