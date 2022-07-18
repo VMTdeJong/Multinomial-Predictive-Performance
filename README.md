@@ -50,8 +50,8 @@
     a. See 1, as well as 2.
     b. Make sure the file alph_mean.txt is in the same directory as the R files, and OptimCor and OptimBin contain their files with intercepts to skip this step. Or, if you want to reproduce the estimated intecepts. This can be done by running: optimFinal.R, OptimizeAlphaForCor and OptimizeBin, with the following parameters:
   	    * id = 1 		# Increment with 1 when more iterations are to be added
-  		  * maxit = 1000	# Sets the number of iterations the algorithm is allowed to run
-  		  * reps = 150 	# Number of repetitions of each scenario (increase to increase accuracy)
+  	    * maxit = 1000	# Sets the number of iterations the algorithm is allowed to run
+  	    * reps = 150 	# Number of repetitions of each scenario (increase to increase accuracy)
     c. Run all scenarios 2000 times. A scenario is selected by setting id to an appropriate value (1:63). See RunSens.R for how exactly this selects a scenario. One might want to run all 2000 in one go. Then set max_i to 2000, and leaverepetition at 0. If one wants to split up each scenario in batches, increment repetition with 1 for every time a scenario is restarted. This ensures a new seed is selected, i.e. independent of all previous seeds (thanks to the parallel package).
     d. For exact replication, run every main scenario (id = 1:63) with max_i = 200, and repetition 0 till 9 and every sensitivity analysis repetion 1 till 10. This can be achieved by using the sh files in linux (see step 3), by running the files in the folder "sh files", after editing them so that they conform to your own setup.
 
