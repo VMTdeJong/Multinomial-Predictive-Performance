@@ -1,6 +1,6 @@
 ## Predictive performance of multinomial logistic prediction models
 * Author of this file and of the final version of the code: Valentijn M.T. de Jong
-* File last modified: December 2018
+* File last modified: July 2022
 * Code last modified: < April 2018
 * This is code for a simulation study presented in: de Jong VMT, Eijkemans MJC, van Calster B, et al. Sample size considerations and predictive performance of multinomial logistic prediction models.Statistics in Medicine. 2019;1–19.https://doi.org/10.1002/sim.8063
 
@@ -22,7 +22,10 @@
     a. All simulations were carried out in R 3.2.2
     b. The .R files contain elaborate comments on how to use each function. Therefore, this file is only there to direct users to the appropriate .R files in the correct order, and which parameters to use.
     c. Note that many of the .R files require other files to be present in the same directory, or in the directory they were put.
-    d. The used R packages are: install.packages(c("glmnet", "mlogit", "MASS", "abind", "tidyr", "VGAM", "DBI", "lazyeval")) # The last two are not necessary for some versions of R.
+    d. The used R packages are: install.packages(c("glmnet", "mlogit", "MASS", "abind", "tidyr", "VGAM", "DBI", "lazyeval")) # The last two are not necessary for some versions of R. Note that this simulation requires a previous version of mlogit" (otherwise an error with dfidx::dfidx will show), which can be downloaded as follows:
+	      install.packages("devtools")
+	      require(devtools)
+	      install_version("mlogit", version = "0.4.2", repos = "http://cran.us.r-project.org")
     e. The full data files are very large, and therefore not included in this data archive. Instead, .RDATA files are incuded, which include all summary data in the manuscript, and more. The estimated alpha parameters are located in .txt files, which are automatically loaded by the scripts.
 
 #### 2. Run the simualation in R <a name="inR"></a>
